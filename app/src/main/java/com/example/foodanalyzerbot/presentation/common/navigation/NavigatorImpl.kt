@@ -43,4 +43,9 @@ class NavigatorImpl(private var context: Context) : Navigator {
     private fun getFragmentManager(): FragmentManager {
         return (context as FragmentActivity).supportFragmentManager
     }
+
+    override fun showChat() {
+        //Todo Alex - Crear Fragmento de chat y meter declaracion aquí
+        //showFragment(R.id.fragmentContainer, /*NOMBRE_FRAGMENTO.GETINSTANCE()*/, false)
+    }
 }
