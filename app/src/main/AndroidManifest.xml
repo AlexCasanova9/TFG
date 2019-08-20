@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.foodanalyzerbot">
+    package="com.uc3m.foodanalyzerbot">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -9,7 +9,7 @@
 
 
     <application
-        android:name=".infrastructure.App"
+        android:name="com.uc3m.foodanalyzerbot.infrastructure.App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -19,7 +19,7 @@
 
 
         <activity
-            android:name="com.example.foodanalyzerbot.presentation.home.activities.HomeActivity"
+            android:name="com.uc3m.foodanalyzerbot.presentation.home.activities.HomeActivity"
             android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

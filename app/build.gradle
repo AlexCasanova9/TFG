@@ -10,7 +10,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "com.example.foodanalyzerbot"
+        applicationId "com.uc3m.foodanalyzerbot"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
