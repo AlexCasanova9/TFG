@@ -5,6 +5,8 @@ import android.content.Intent
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
+import com.example.foodanalyzerbot.R
+import com.example.foodanalyzerbot.presentation.home.fragments.MessageFragment
 
 class NavigatorImpl(private var context: Context) : Navigator {
 
@@ -46,6 +48,6 @@ class NavigatorImpl(private var context: Context) : Navigator {
 
     override fun showChat() {
         //Todo Alex - Crear Fragmento de chat y meter declaracion aquí
-        //showFragment(R.id.fragmentContainer, /*NOMBRE_FRAGMENTO.GETINSTANCE()*/, false)
+        //showFragment(R.id.fragmentContainer, fragment = MessageFragment, false)
     }
 }

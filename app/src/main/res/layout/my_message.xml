@@ -8,7 +8,7 @@
     tools:background="@android:color/black">
 
     <TextView
-        android:id="@+id/txtMyMessage"
+        android:id="@+id/UserText"
         tools:text="Hi, my message"
         android:background="@drawable/my_message_bubble"
         android:layout_width="wrap_content"
@@ -23,14 +23,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtMyMessageTime"
+        android:id="@+id/UserTime"
         android:text="12:00 PM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="10sp"
         android:textStyle="bold"
         android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtMyMessage"
-        app:layout_constraintRight_toLeftOf="@+id/txtMyMessage" />
+        app:layout_constraintBottom_toBottomOf="@+id/UserText"
+        app:layout_constraintRight_toLeftOf="@+id/UserText" />
 
 </android.support.constraint.ConstraintLayout>

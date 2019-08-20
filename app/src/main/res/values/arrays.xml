@@ -2,5 +2,9 @@
 <resources>
     <string-array name="wallpapers_url">
         <item>https://drive.google.com/open?id=1bDWCxTRbTizJjGQz-bLZeMv1ZAywHexu</item>
+        <item>https://drive.google.com/open?id=1bvxa-OiF7m2fBAEOvHUjItxY5SgpPIZn</item>
+        <item>https://drive.google.com/open?id=1lhtd9k89jsYSuqK1KaJg6VcrLy8JvkCQ</item>
+        <item>https://drive.google.com/open?id=1puNxffyxmuCUniWpfsY-MS0wWRADV1zg</item>
+        <item>https://drive.google.com/open?id=1HscToRyUHTQBQ_97H_WtgsDam6ZkLly2</item>
     </string-array>
 </resources>

@@ -10,7 +10,7 @@
     tools:background="@android:color/black">
 
     <TextView
-        android:id="@+id/txtBotUser"
+        android:id="@+id/BotName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtBotMessage"
+        android:id="@+id/BotText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -31,19 +31,19 @@
         android:padding="15dp"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBotUser"
+        app:layout_constraintTop_toBottomOf="@+id/BotName"
         tools:text="Hi, Bot's message" />
 
 
     <TextView
-        android:id="@+id/txtBotMessageTime"
+        android:id="@+id/BotTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/txtBotMessage"
-        app:layout_constraintStart_toEndOf="@+id/txtBotMessage"
+        app:layout_constraintBottom_toBottomOf="@+id/BotName"
+        app:layout_constraintStart_toEndOf="@+id/BotText"
         tools:text="12:00 PM" />
 
 </android.support.constraint.ConstraintLayout>

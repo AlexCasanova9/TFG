@@ -8,17 +8,18 @@
 
     <ImageView
         android:id="@+id/wallpaper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription"
-        tools:background="@drawable/fruta" />
+        tools:background="@drawable/uva" />
 
     <Button
-        android:id="@+id/PButton"
+        android:id="@+id/StartBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -29,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/WellcomeText"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -42,14 +43,14 @@
         app:layout_constraintTop_toBottomOf="parent" />
 
     <Button
-        android:id="@+id/WPButton"
+        android:id="@+id/WallpaperBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/random_wallpaper_button_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
+        app:layout_constraintTop_toBottomOf="@id/WellcomeText" />
 
 
 </android.support.constraint.ConstraintLayout>

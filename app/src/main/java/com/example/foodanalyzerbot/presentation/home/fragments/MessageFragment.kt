@@ -8,15 +8,15 @@ import com.example.foodanalyzerbot.presentation.home.presenter.ChatBotPresenterI
 import com.example.foodanalyzerbot.presentation.home.view.ChatBotView
 import com.example.foodanalyzerbot.presentation.utils.loadImageFromUrl
 import kotlinx.android.synthetic.main.fragment_chat_bot.*
-import java.util.*
+import java.util.ArrayList
 
 @ContentView(R.layout.fragment_chat_bot)
-class ChatBotFragment : BaseFragment(), ChatBotView {
+class MessageFragment  : BaseFragment(), ChatBotView {
 
     private val presenter: ChatBotPresenter = ChatBotPresenterImpl()
 
     companion object {
-        fun getInstance() = ChatBotFragment()
+        fun getInstance() = MessageFragment()
     }
 
     override fun initializeView() {
@@ -43,4 +43,6 @@ class ChatBotFragment : BaseFragment(), ChatBotView {
 
         wallpaper.loadImageFromUrl(list[resource], R.drawable.uva)
     }
+
+
 }

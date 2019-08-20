@@ -10,6 +10,9 @@ class App : Application() {
         private lateinit var navigator: Navigator
 
         fun getNavigator() = navigator
+
+        lateinit var user:String
+        const val botUser = "Fudy"
     }
 
     override fun onCreate() {
