@@ -8,7 +8,7 @@ import java.util.*
 class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
 
     override fun onClickPButton() {
-        App.getNavigator().showChat()
+        App.getNavigator().showMessageRoom()
     }
 
     override fun onClickRandomWallpaper() {

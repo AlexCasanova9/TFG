@@ -4,4 +4,6 @@
     <string name="wellcome_message">Hello Fudy!</string>
     <string name="fudy_button_title">Fudy</string>
     <string name="random_wallpaper_button_title">Random WallPaper</string>
+    <string name="send_button_title">Send</string>
+    <string name="input_text_hint">Say something to Fudy</string>
 </resources>

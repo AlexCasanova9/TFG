@@ -38,9 +38,9 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         return if(viewType == VIEW_TYPE_MY_MESSAGE) {
-            MyMessageViewHolder(LayoutInflater.from(context).inflate(R.layout.my_message, parent, false))
+            MyMessageViewHolder(LayoutInflater.from(context).inflate(R.layout.item_message_person, parent, false))
         } else {
-            BotMessageViewHolder(LayoutInflater.from(context).inflate(R.layout.bot_message, parent, false))
+            BotMessageViewHolder(LayoutInflater.from(context).inflate(R.layout.item_message_bot, parent, false))
         }
     }
 

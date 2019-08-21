@@ -28,7 +28,6 @@ class ChatBotFragment : BaseFragment(), ChatBotView {
     private fun assignClickListener() {
         StartBtn.setOnClickListener {
             presenter.onClickPButton()
-            //startActivity(Intent(this, MessageFragment::class.java))
         }
 
         WallpaperBtn.setOnClickListener {

@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginBottom="55dp"
         android:scrollbars="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -39,7 +38,7 @@
             android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:hint="Say something to Fudy"
+            android:hint="@string/input_text_hint"
             android:maxLines="6" />
 
         <Button
@@ -49,9 +48,11 @@
             android:layout_gravity="bottom"
             android:layout_marginTop="24dp"
             android:clickable="true"
+            android:textAllCaps="true"
             android:gravity="center"
-            android:text="SEND"
-            android:textSize="14dp" />
+            android:text="@string/send_button_title"
+            android:textSize="14dp"
+            android:focusable="true" />
 
     </LinearLayout>
 
