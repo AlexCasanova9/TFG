@@ -1,20 +1,26 @@
-package com.uc3m.foodanalyzerbot.presentation.utils
+package com.uc3m.foodanalyzerbot.presentation.home.adapters
 
-import java.text.SimpleDateFormat
+import android.content.Context
+import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import com.uc3m.foodanalyzerbot.R
+import com.uc3m.foodanalyzerbot.infrastructure.App
+import com.uc3m.foodanalyzerbot.presentation.home.model.Message
+import com.uc3m.foodanalyzerbot.presentation.utils.Formatter
+import kotlinx.android.synthetic.main.item_message_bot.view.*
+import kotlinx.android.synthetic.main.item_message_person.view.*
 import java.util.*
 
+class MessageAdapter(private val context: Context) : RecyclerView.Adapter<MessageViewHolder>() {
 
-private const val VIEW_TYPE_MY_MESSAGE = 1
-private const val VIEW_TYPE_BOT_MESSAGE = 2
-
-object DateUtils {
-    fun fromMillisToTimeString(millis: Long) : String {
-        val format = SimpleDateFormat("hh:mm a", Locale.getDefault())
-        return format.format(millis)
+    companion object {
+        private const val VIEW_TYPE_PERSON_MESSAGE = 1
+        private const val VIEW_TYPE_BOT_MESSAGE = 2
     }
-}
-/*
-class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHolder>() {
+
     private val messages: ArrayList<Message> = ArrayList()
 
     fun addMessage(message: Message){
@@ -27,17 +33,17 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
     }
 
     override fun getItemViewType(position: Int): Int {
-        val message = messages.get(position)
+        val message = messages[position]
 
         return if(App.user == message.user) {
-            VIEW_TYPE_MY_MESSAGE
+            VIEW_TYPE_PERSON_MESSAGE
         } else {
             VIEW_TYPE_BOT_MESSAGE
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-        return if(viewType == VIEW_TYPE_MY_MESSAGE) {
+        return if (viewType == VIEW_TYPE_PERSON_MESSAGE) {
             MyMessageViewHolder(LayoutInflater.from(context).inflate(R.layout.item_message_person, parent, false))
         } else {
             BotMessageViewHolder(LayoutInflater.from(context).inflate(R.layout.item_message_bot, parent, false))
@@ -45,9 +51,8 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
     }
 
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-        val message = messages.get(position)
-
-        holder?.bind(message)
+        val message = messages[position]
+        holder.bind(message)
     }
 
     inner class MyMessageViewHolder (view: View) : MessageViewHolder(view) {
@@ -56,7 +61,7 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
 
         override fun bind(message: Message) {
             messageText.text = message.message
-            timeText.text = DateUtils.fromMillisToTimeString(message.time)
+            timeText.text = Formatter.formatHour(message.time)
         }
     }
 
@@ -69,12 +74,12 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
         override fun bind(message: Message) {
             messageText.text = message.message
             userText.text = message.user
-            timeText.text = DateUtils.fromMillisToTimeString(message.time)
+            timeText.text = Formatter.formatHour(message.time)
         }
     }
 }
 
 open class MessageViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-    open fun bind(message:Message) {}
+    open fun bind(message: Message) = Unit
 }
-*/
+

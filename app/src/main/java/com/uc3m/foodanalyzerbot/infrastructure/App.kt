@@ -16,7 +16,7 @@ class App : Application() {
             navigator = NavigatorImpl(context)
         }
 
-        lateinit var user:String
+        lateinit var user: String
         const val botUser = "Fudy"
     }
 

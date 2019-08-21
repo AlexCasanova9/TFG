@@ -21,6 +21,6 @@ class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
 
     private fun randomNumber(): Int {
         val r = Random()
-        return r.nextInt(5) + 1
+        return r.nextInt(5)
     }
 }
