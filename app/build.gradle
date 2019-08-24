@@ -15,12 +15,25 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        buildConfigField 'String', 'X_TOKEN_ACCESS', '"32a705dd505d4b2db135759722a21c23"'
+        buildConfigField 'String', 'BaseUrl', '"https://api.dialogflow.com/v1/"'
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/INDEX.LIST'
     }
 }
 
@@ -42,6 +55,8 @@ dependencies {
     implementation 'com.pusher:pusher-java-client:1.8.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:converter-moshi:2.4.0'
 
     //Glide
