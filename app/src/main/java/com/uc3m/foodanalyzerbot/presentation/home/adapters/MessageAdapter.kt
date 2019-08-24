@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.uc3m.foodanalyzerbot.R
 import com.uc3m.foodanalyzerbot.infrastructure.App
-import com.uc3m.foodanalyzerbot.presentation.home.model.Message
+import com.uc3m.foodanalyzerbot.presentation.home.model.MessageDto
 import com.uc3m.foodanalyzerbot.presentation.utils.Formatter
 import kotlinx.android.synthetic.main.item_message_bot.view.*
 import kotlinx.android.synthetic.main.item_message_person.view.*
@@ -21,9 +21,9 @@ class MessageAdapter(private val context: Context) : RecyclerView.Adapter<Messag
         private const val VIEW_TYPE_BOT_MESSAGE = 2
     }
 
-    private val messages: ArrayList<Message> = ArrayList()
+    private val messages: ArrayList<MessageDto> = ArrayList()
 
-    fun addMessage(message: Message){
+    fun addMessage(message: MessageDto) {
         messages.add(message)
         notifyDataSetChanged()
     }
@@ -59,7 +59,7 @@ class MessageAdapter(private val context: Context) : RecyclerView.Adapter<Messag
         private var messageText: TextView = view.UserText
         private var timeText: TextView = view.UserTime
 
-        override fun bind(message: Message) {
+        override fun bind(message: MessageDto) {
             messageText.text = message.message
             timeText.text = Formatter.formatHour(message.time)
         }
@@ -71,7 +71,7 @@ class MessageAdapter(private val context: Context) : RecyclerView.Adapter<Messag
         private var userText: TextView = view.BotName
         private var timeText: TextView = view.BotTime
 
-        override fun bind(message: Message) {
+        override fun bind(message: MessageDto) {
             messageText.text = message.message
             userText.text = message.user
             timeText.text = Formatter.formatHour(message.time)
@@ -80,6 +80,6 @@ class MessageAdapter(private val context: Context) : RecyclerView.Adapter<Messag
 }
 
 open class MessageViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-    open fun bind(message: Message) = Unit
+    open fun bind(message: MessageDto) = Unit
 }
 
