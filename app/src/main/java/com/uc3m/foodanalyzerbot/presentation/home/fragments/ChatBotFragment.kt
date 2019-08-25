@@ -47,4 +47,5 @@ class ChatBotFragment : BaseFragment(), ChatBotView {
     override fun showMessage(message: String) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
+
 }

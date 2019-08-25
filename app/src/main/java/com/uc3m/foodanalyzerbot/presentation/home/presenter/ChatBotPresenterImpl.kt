@@ -8,12 +8,16 @@ import java.util.*
 class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
 
     override fun onClickPButton() {
-        view?.showMessage("Preferences: " + App.getPreferences().getBackgroundId())
-        App.getNavigator().showMessageRoom()
+
+        if(App.getPreferences().getUserName().isNotEmpty()){
+            App.getNavigator().showMessageRoom()
+        }
+        else{
+            App.getNavigator().showNameDialog()
+        }
     }
 
     override fun onClickRandomWallpaper() {
-        App.getPreferences().setBackgroundId(12)
         view?.setBackgroundImage(randomNumber())
     }
 

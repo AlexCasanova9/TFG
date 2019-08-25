@@ -7,4 +7,5 @@ interface ChatBotView : BaseView {
     fun setBackgroundImage(resource: Int)
 
     fun showMessage(message: String)
+
 }
