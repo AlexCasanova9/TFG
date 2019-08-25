@@ -1,5 +1,6 @@
 package com.uc3m.foodanalyzerbot.presentation.home.fragments
 
+import android.widget.Toast
 import com.uc3m.foodanalyzerbot.R
 import com.uc3m.foodanalyzerbot.infrastructure.ContentView
 import com.uc3m.foodanalyzerbot.presentation.common.BaseFragment
@@ -41,5 +42,9 @@ class ChatBotFragment : BaseFragment(), ChatBotView {
         list.addAll(listOf(*resources.getStringArray(R.array.wallpapers_url)))
 
         wallpaper.loadImageFromUrl(list[resource], R.drawable.uva)
+    }
+
+    override fun showMessage(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 }
