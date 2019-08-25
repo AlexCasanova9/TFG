@@ -12,6 +12,7 @@ class HomeActivity : BaseActivity() {
 
     override fun initializeView() {
         App.initializeNavigator(this)
+        App.initializePreferences(this)
         setSupportActionBar(toolbar)
         initFragmentContainer(R.id.fragmentContainer, ChatBotFragment.getInstance())
     }
