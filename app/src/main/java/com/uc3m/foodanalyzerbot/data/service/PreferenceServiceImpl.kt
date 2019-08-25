@@ -15,9 +15,18 @@ class PreferenceServiceImpl(context: FragmentActivity) : BasePreferencesService(
         return getInt(Key.BACKGROUND_ID, 0)
     }
 
+    override fun setUserName(name: String) {
+        setString(Key.USER_NAME, name)
+    }
+
+    override fun getUserName(): String {
+        return getString(Key.USER_NAME)
+    }
+
     @Keep
     private enum class Key : PreferencesKey {
-        BACKGROUND_ID;
+        BACKGROUND_ID,
+        USER_NAME;
 
         override fun keyString(): String {
             return this.name
