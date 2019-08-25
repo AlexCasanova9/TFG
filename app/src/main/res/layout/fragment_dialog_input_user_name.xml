@@ -2,19 +2,18 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:layout_gravity="center"
-    android:padding="16dp">
+    android:layout_gravity="center"
+    android:padding="16dp"
+    android:background="@android:color/white">
 
     <TextView
-        android:id="@+id/FudyText"
+        android:id="@+id/main_title_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-
-        android:text="Hey, wellcome! I don't believe we have met"
+        android:text="@string/title_dialog_text"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -25,42 +24,44 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/FudyText2"
+        android:id="@+id/description_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Mi name is Fudy. What's your name?"
+        android:text="@string/description_dialog_text"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FudyText" />
+        app:layout_constraintTop_toBottomOf="@+id/main_title_textView" />
 
 
     <EditText
-        android:id="@+id/NameText"
+        android:id="@+id/name_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:hint="@string/nameEditTextHint"
-        android:inputType="number"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FudyText2"/>
+        app:layout_constraintTop_toBottomOf="@id/description_textView"
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
 
     <Button
-        android:id="@+id/Accept"
+        android:id="@+id/accept_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Accept"
+        android:text="@string/accept_button_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/NameText"/>
+        app:layout_constraintTop_toBottomOf="@id/name_editText" />
 
 </android.support.constraint.ConstraintLayout>

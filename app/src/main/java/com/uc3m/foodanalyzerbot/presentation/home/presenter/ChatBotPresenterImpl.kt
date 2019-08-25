@@ -13,7 +13,7 @@ class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
             App.getNavigator().showMessageRoom()
         }
         else{
-            App.getNavigator().showNameDialog()
+            App.getNavigator().showInputNameDialog()
         }
     }
 

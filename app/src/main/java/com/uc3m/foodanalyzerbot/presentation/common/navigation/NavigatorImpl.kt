@@ -6,8 +6,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
 import com.uc3m.foodanalyzerbot.R
+import com.uc3m.foodanalyzerbot.presentation.home.fragments.InputNameDialogFragment
 import com.uc3m.foodanalyzerbot.presentation.home.fragments.MessageRoomFragment
-import com.uc3m.foodanalyzerbot.presentation.home.fragments.NameDialogFragment
 
 class NavigatorImpl(private var context: Context) : Navigator {
 
@@ -51,7 +51,11 @@ class NavigatorImpl(private var context: Context) : Navigator {
         showFragment(R.id.fragmentContainer, MessageRoomFragment.getInstance(), false)
     }
 
-    override fun showNameDialog() {
-        showFragment(R.id.fragmentContainer, NameDialogFragment.newInstance(), true)
+    override fun showInputNameDialog() {
+        addFragment(
+            R.id.fragmentContainer, InputNameDialogFragment.newInstance(),
+            backEnable = true,
+            hidePreviousFragment = false
+        )
     }
 }
