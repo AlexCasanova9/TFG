@@ -13,7 +13,6 @@ class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
     private val dialogFlowInteractor = DialogFlowAsyncInteractor()
 
     override fun onClickPButton() {
-
         if(App.getPreferences().getUserName().isNotEmpty()){
             App.getNavigator().showMessageRoom()
         }
@@ -35,7 +34,7 @@ class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
                 //Fail: Do what ever
             }
         })
-        //view?.setBackgroundImage(randomNumber())
+        view?.setBackgroundImage(randomNumber())
     }
 
     override fun loadRandomBackground() {
