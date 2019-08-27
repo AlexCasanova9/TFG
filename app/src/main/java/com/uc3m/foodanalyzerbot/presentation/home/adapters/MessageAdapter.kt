@@ -23,6 +23,7 @@ class MessageAdapter(private val context: Context) : RecyclerView.Adapter<Messag
 
     private val messages: ArrayList<MessageDto> = ArrayList()
 
+
     fun addMessage(message: MessageDto) {
         messages.add(message)
         notifyDataSetChanged()

@@ -10,8 +10,6 @@ import java.util.*
 
 class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
 
-    private val dialogFlowInteractor = DialogFlowAsyncInteractor()
-
     override fun onClickPButton() {
         if(App.getPreferences().getUserName().isNotEmpty()){
             App.getNavigator().showMessageRoom()
@@ -22,18 +20,7 @@ class ChatBotPresenterImpl : ChatBotPresenter, BasePresenter<ChatBotView>() {
     }
 
     override fun onClickRandomWallpaper() {
-        dialogFlowInteractor.execute("Hola", object : InteractorCallback<MessageDto> {
-            override fun success(data: MessageDto?) {
-                if (data != null && data.message.isNotEmpty())
-                    view?.showMessage(data.message)
-                else
-                    view?.showMessage("Mensaje vacío")
-            }
 
-            override fun fail(t: Throwable?) {
-                //Fail: Do what ever
-            }
-        })
         view?.setBackgroundImage(randomNumber())
     }
 
