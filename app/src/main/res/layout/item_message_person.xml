@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:background="@android:color/black">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/UserText"
@@ -16,7 +15,6 @@
         android:maxWidth="240dp"
         android:padding="15dp"
         android:elevation="5dp"
-        android:textColor="#ffffff"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         app:layout_constraintRight_toRightOf="parent"

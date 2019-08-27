@@ -6,8 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    tools:background="@android:color/black">
+    android:paddingTop="8dp">
 
     <TextView
         android:id="@+id/BotName"
@@ -29,7 +28,6 @@
         android:elevation="5dp"
         android:maxWidth="240dp"
         android:padding="15dp"
-        android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BotName"
         tools:text="Hi, Bot's message" />

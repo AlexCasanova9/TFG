@@ -36,7 +36,7 @@ class MessageAdapter(private val context: Context) : RecyclerView.Adapter<Messag
     override fun getItemViewType(position: Int): Int {
         val message = messages[position]
 
-        return if(App.user == message.user) {
+        return if (App.getPreferences().getUserName() == message.user) {
             VIEW_TYPE_PERSON_MESSAGE
         } else {
             VIEW_TYPE_BOT_MESSAGE

@@ -27,7 +27,6 @@ class App : Application() {
             preferences = PreferenceServiceImpl(context)
         }
 
-        lateinit var user: String
         const val botUser = "Fudy"
     }
 
