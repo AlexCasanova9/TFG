@@ -30,6 +30,7 @@ class MessageRoomFragment : BaseFragment(), MessageRoomView {
 
         SendBtn.setOnClickListener {
             if (MessageText.text.isNotEmpty()) {
+                hideKeyboard()
                 val message = MessageDto(
                     App.getPreferences().getUserName(),
                     MessageText.text.toString(),
@@ -37,7 +38,9 @@ class MessageRoomFragment : BaseFragment(), MessageRoomView {
                 )
 
                 adapter?.addMessage(message)
+                scrollToFinish()
                 presenter.onClickSend(MessageText.text.toString())
+                MessageText.text.clear()
             }
         }
     }
@@ -45,7 +48,11 @@ class MessageRoomFragment : BaseFragment(), MessageRoomView {
 
     override fun showMessage(message: MessageDto) {
         adapter?.addMessage(message)
+        scrollToFinish()
     }
 
+    private fun scrollToFinish() {
+        messageList.smoothScrollToPosition(adapter?.itemCount?.minus(1) ?: 0)
+    }
 
 }

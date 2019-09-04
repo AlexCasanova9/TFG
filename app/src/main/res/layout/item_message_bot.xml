@@ -1,47 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp">
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="10dp"
+    android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/BotName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="@string/fudy_button_title"
-        android:textSize="12sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/botIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/bot_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/messageContainer"
+        tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/BotText"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/messageContainer"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/bot_message_bubble"
-        android:elevation="5dp"
-        android:maxWidth="240dp"
-        android:padding="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BotName"
-        tools:text="Hi, Bot's message" />
+        android:background="@drawable/shape_bg_incoming_bubble"
+        android:layout_marginTop="18dp"
+        android:paddingTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/botIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/botName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="@string/fudy_button_title"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/botMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bot_message_bubble"
+            android:elevation="5dp"
+            android:maxWidth="240dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:padding="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/botName"
+            tools:text="Hi, Bot's message" />
 
 
-    <TextView
-        android:id="@+id/BotTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/BotName"
-        app:layout_constraintStart_toEndOf="@+id/BotText"
-        tools:text="12:00 PM" />
+        <TextView
+            android:id="@+id/botTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textStyle="bold|italic"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/botName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/botName"
+            tools:text="12:00 PM" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

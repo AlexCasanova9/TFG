@@ -4,31 +4,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:layout_marginStart="10dp"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/UserText"
-        tools:text="Hi, my message"
-        android:background="@drawable/my_message_bubble"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="240dp"
-        android:padding="15dp"
-        android:elevation="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/person_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/messageContainer"
+        tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/UserTime"
-        android:text="12:00 PM"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/messageContainer"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/UserText"
-        app:layout_constraintRight_toLeftOf="@+id/UserText" />
+        android:background="@drawable/shape_bg_outgoing_bubble"
+        android:layout_marginTop="18dp"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toStartOf="@id/userIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="UserName"
+            android:layout_marginEnd="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userMessage"
+            android:gravity="end"
+            tools:text="Hi, my message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bot_message_bubble"
+            android:elevation="5dp"
+            android:maxWidth="240dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+
+        <TextView
+            android:id="@+id/userTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="13sp"
+            android:layout_marginStart="30dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toTopOf="@id/userName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/userName"
+            tools:text="12:00 PM" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

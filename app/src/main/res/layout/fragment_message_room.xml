@@ -7,25 +7,22 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/messageList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="55dp"
+        android:layout_height="0dp"
         android:scrollbars="vertical"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layout_messageArea"
         app:layout_constraintTop_toTopOf="parent">
 
     </android.support.v7.widget.RecyclerView>
 
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/layout_messageArea"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:background="#ffffff"
-        android:minHeight="48dp"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -33,28 +30,30 @@
         <EditText
             android:id="@+id/MessageText"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="0dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_weight="1"
             android:background="@android:color/transparent"
             android:hint="@string/input_text_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/SendBtn"
+            app:layout_constraintTop_toTopOf="parent"
             android:maxLines="6" />
 
         <Button
             android:id="@+id/SendBtn"
-            android:layout_width="64dp"
-            android:layout_height="48dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:clickable="true"
             android:textAllCaps="true"
-            android:gravity="center"
             android:text="@string/send_button_title"
-            android:textSize="14dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/MessageText"
+            app:layout_constraintTop_toTopOf="@id/MessageText"
             android:focusable="true" />
 
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

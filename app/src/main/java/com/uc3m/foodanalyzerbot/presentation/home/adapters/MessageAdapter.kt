@@ -2,6 +2,9 @@ package com.uc3m.foodanalyzerbot.presentation.home.adapters
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,26 +60,39 @@ class MessageAdapter(private val context: Context) : RecyclerView.Adapter<Messag
     }
 
     inner class MyMessageViewHolder (view: View) : MessageViewHolder(view) {
-        private var messageText: TextView = view.UserText
-        private var timeText: TextView = view.UserTime
+        private var messageText: TextView = view.userMessage
+        private var userName: TextView = view.userName
+        private var timeText: TextView = view.userTimestamp
 
         override fun bind(message: MessageDto) {
             messageText.text = message.message
-            timeText.text = Formatter.formatHour(message.time)
+            userName.text = App.getPreferences().getUserName()
+            setUnderlineText(timeText, Formatter.formatHour(message.time))
         }
     }
 
 
     inner class BotMessageViewHolder (view: View) : MessageViewHolder(view) {
-        private var messageText: TextView = view.BotText
-        private var userText: TextView = view.BotName
-        private var timeText: TextView = view.BotTime
+        private var messageText: TextView = view.botMessage
+        private var botName: TextView = view.botName
+        private var timeText: TextView = view.botTimestamp
 
         override fun bind(message: MessageDto) {
             messageText.text = message.message
-            userText.text = message.user
-            timeText.text = Formatter.formatHour(message.time)
+            botName.text = message.user
+            setUnderlineText(timeText, Formatter.formatHour(message.time))
         }
+    }
+
+    private fun setUnderlineText(textView: TextView, text: String) {
+        val spannableString = SpannableString(text)
+        spannableString.setSpan(
+            UnderlineSpan(),
+            0,
+            spannableString.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        textView.text = spannableString
     }
 }
 
