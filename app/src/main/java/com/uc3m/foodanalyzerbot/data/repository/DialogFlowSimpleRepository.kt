@@ -3,6 +3,7 @@ package com.uc3m.foodanalyzerbot.data.repository
 import com.uc3m.foodanalyzerbot.data.repository.datasources.api.RetrofitDialogFlowApiClientGenerator
 import com.uc3m.foodanalyzerbot.data.repository.datasources.api.dialogflow.DialogFlowApi
 import com.uc3m.foodanalyzerbot.data.repository.datasources.api.dialogflow.model.DialogFlowApiResponse
+import com.uc3m.foodanalyzerbot.domain.FullfilmentMessage
 import com.uc3m.foodanalyzerbot.domain.repository.DialogFlowRepository
 import com.uc3m.foodanalyzerbot.infrastructure.App
 import com.uc3m.foodanalyzerbot.presentation.home.model.MessageDto
@@ -29,8 +30,28 @@ class DialogFlowSimpleRepository : BaseRepository(), DialogFlowRepository {
     private fun buildMessageDto(response: DialogFlowApiResponse): MessageDto {
         return MessageDto(
             App.botUser,
-            response.result?.fullfillment?.message ?: "",
+            buildMessageText(
+                response.result?.fullfillment?.message ?: "",
+                response.result?.fullfillment?.messageList ?: emptyList()
+            ),
             Calendar.getInstance().time.time
         )
+    }
+
+    private fun buildMessageText(speech: String, messageList: List<FullfilmentMessage>): String {
+        return if (speech.isNotBlank()) {
+            speech
+        } else if (!messageList.isNullOrEmpty()) {
+            var messagesConcat = ""
+            messageList.forEach {
+                messagesConcat = messagesConcat + it.text + "\n"
+            }
+            if (speech.isNotBlank())
+                speech + "\n" + messagesConcat
+            else
+                messagesConcat
+        } else {
+            ""
+        }
     }
 }
