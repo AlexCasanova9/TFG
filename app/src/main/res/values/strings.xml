@@ -8,6 +8,6 @@
     <string name="input_text_hint">Say something to Fudy</string>
     <string name="nameEditTextHint">Enter name</string>
     <string name="accept_button_text">Accept</string>
-    <string name="description_dialog_text">Mi name is Fudy. What\'s your name?</string>
-    <string name="title_dialog_text">Hey, wellcome! I don\'t believe we have met</string>
+    <string name="description_dialog_text">Please, enter a user name for your account</string>
+    <string name="title_dialog_text">Wellcome to the FoodAnalyzer Bot!</string>
 </resources>
