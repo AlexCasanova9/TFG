@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Food Analyzer Bot</string>
     <string name="action_settings">Settings</string>
-    <string name="wellcome_message">Hello Fudy!</string>
+    <string name="wellcome_message">FoodAnalyzer\n Bot</string>
     <string name="fudy_button_title">Fudy</string>
     <string name="random_wallpaper_button_title">Random WallPaper</string>
     <string name="send_button_title">Send</string>
